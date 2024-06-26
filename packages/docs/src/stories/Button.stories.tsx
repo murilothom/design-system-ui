@@ -7,6 +7,31 @@ export default {
   component: Button,
   args: {
     children: 'Send',
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
+  },
+  argTypes: {
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
+      control: {
+        type: 'select',
+      },
+    },
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'select',
+      },
+    },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    onClick: {
+      action: 'click',
+    },
   },
 } as Meta<ButtonProps>
 
@@ -40,6 +65,13 @@ export const WithIcon: StoryObj<ButtonProps> = {
         <ArrowRight weight="bold" />
       </>
     ),
+  },
+  argTypes: {
+    children: {
+      control: {
+        disable: true,
+      },
+    },
   },
 }
 

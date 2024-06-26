@@ -3,14 +3,9 @@ import '../styles/tokens-grid.css'
 interface TokensGridProps {
   tokens: Record<string, string>
   hasRemValue?: boolean
-  isFontWeights?: boolean
 }
 
-export function TokensGrid({
-  tokens,
-  hasRemValue = false,
-  isFontWeights = false,
-}: TokensGridProps) {
+export function TokensGrid({ tokens, hasRemValue = false }: TokensGridProps) {
   return (
     <table className="tokens-grid">
       <thead>
@@ -25,7 +20,7 @@ export function TokensGrid({
         {Object.entries(tokens).map(([key, value]) => (
           <tr key={key}>
             <td>{key}</td>
-            <td style={isFontWeights ? { fontWeight: value } : {}}>{value}</td>
+            <td>{value}</td>
             {hasRemValue && <td>{Number(value.replace('rem', '')) * 16}px</td>}
           </tr>
         ))}

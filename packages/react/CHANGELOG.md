@@ -1,7 +1,7 @@
 # @mthom-ui/react
 
-## 2.0.0
+## 2.0.1
 
-### Major Changes
+### Minor Changes
 
-- 951a950: changed package name
+- 6e5fbf0: add ref text input and adjust styles
